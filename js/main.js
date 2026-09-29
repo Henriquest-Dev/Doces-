@@ -2,7 +2,7 @@
   const { products, categories, services, gallery, visit } = window.ANGY;
   const $ = (s, r = document) => r.querySelector(s);
   const byId = (id) => products.find((p) => p.id === id);
-  const eur = (v) => v.toFixed(2).replace('.', ',') + '€';
+  const money = (v) => Math.round(v).toLocaleString('pt-PT').replace(/\s/g, '\u00a0') + '\u00a0MZN';
   const isMobile = () => window.matchMedia('(max-width: 760px)').matches;
 
   buildDrips();
@@ -39,7 +39,7 @@
     b.setAttribute('role', 'tab');
     b.setAttribute('aria-label', p.name);
     b.style.setProperty('--c', p.color);
-    b.innerHTML = `<img src="${p.img}" alt=""><span>${eur(p.price)}</span>`;
+    b.innerHTML = `<img src="${p.img}" alt=""><span>${money(p.price)}</span>`;
     b.addEventListener('click', () => { showHero(i); restartHeroTimer(); });
     thumbs.appendChild(b);
   });
@@ -70,7 +70,7 @@
     copyEls.forEach((el) => { el.classList.remove('swap-in'); el.classList.add('swap-out'); });
     setTimeout(() => {
       $('#heroTitle').textContent = p.name;
-      $('#heroPrice').textContent = eur(p.price);
+      $('#heroPrice').textContent = money(p.price);
       $('#heroDesc').textContent = p.desc;
       copyEls.forEach((el, i) => { el.classList.remove('swap-out'); el.style.animationDelay = i * 70 + 'ms'; el.classList.add('swap-in'); });
     }, 320);
@@ -83,7 +83,7 @@
     setAccent(p.color, p.deep);
     if (instant) {
       heroImg.src = p.img; heroImg.alt = p.name;
-      $('#heroTitle').textContent = p.name; $('#heroPrice').textContent = eur(p.price); $('#heroDesc').textContent = p.desc;
+      $('#heroTitle').textContent = p.name; $('#heroPrice').textContent = money(p.price); $('#heroDesc').textContent = p.desc;
       paintFloaters(p);
       return;
     }
@@ -142,7 +142,7 @@
         <p class="pcard__cat">${catName(p.cat)}</p>
         <h3 class="pcard__name">${p.name}</h3>
         <p class="pcard__desc">${p.desc}</p>
-        <div class="pcard__foot"><span class="pcard__price">${eur(p.price)}</span><button class="pcard__btn" type="button" aria-label="Pedir ${p.name}" data-order="${p.id}">+</button></div>
+        <div class="pcard__foot"><span class="pcard__price">${money(p.price)}</span><button class="pcard__btn" type="button" aria-label="Pedir ${p.name}" data-order="${p.id}">+</button></div>
       </article>`).join('');
     sizeRail();
   }
@@ -174,7 +174,7 @@
       <article class="sslide">
         <div class="sslide__media"><img src="${p.img}" alt="${p.name}" loading="lazy" draggable="false"></div>
         <div class="sslide__card">
-          <div class="sslide__top"><span class="sslide__price">${eur(p.price)}</span><span class="sslide__tag">${catName(p.cat)}</span></div>
+          <div class="sslide__top"><span class="sslide__price">${money(p.price)}</span><span class="sslide__tag">${catName(p.cat)}</span></div>
           <h3 class="sslide__name">${p.name}</h3>
           <p class="sslide__desc">${p.desc}</p>
           <button class="sslide__btn" type="button" data-order="${p.id}">Quero este!</button>
