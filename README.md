@@ -1,5 +1,7 @@
 # Angy Gelados — website
 
+![Pré-visualização](docs/preview.jpg)
+
 Site animado de uma página para a **@angy_gelados** (gelados, waffles, panquecas, donuts e batidos).
 HTML, CSS e JavaScript puros, sem build: basta abrir o `index.html` ou publicar a pasta
 (GitHub Pages, Netlify, Vercel…).
