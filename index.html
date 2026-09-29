@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Angy Gelados</title>
+  <meta name="description" content="Angy Gelados — gelados, waffles, panquecas e crepes feitos com amor.">
+  <meta name="theme-color" content="#e8488a">
+  <link rel="icon" href="assets/brand/icon-180.png">
+  <link rel="apple-touch-icon" href="assets/brand/icon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__drip" data-drip="cream"></div>
+    <img class="loader__logo" src="assets/brand/logo.png" alt="">
+  </div>
+
+  <!-- Header (mobile / sticky) -->
+  <header class="topbar" id="topbar">
+    <a href="#inicio" class="topbar__brand"><img src="assets/brand/logo.png" alt="Angy Gelados"></a>
+    <nav class="topbar__nav" aria-label="Principal">
+      <a href="#inicio">Início</a>
+      <a href="#menu">Menu</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#visita">Visita</a>
+    </nav>
+    <button class="topbar__burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+  <div class="drawer" id="drawer">
+    <a href="#inicio">Início</a>
+    <a href="#menu">Menu</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#visita">Visita</a>
+    <a class="drawer__ig" href="https://www.instagram.com/angy_gelados/" target="_blank" rel="noopener">@angy_gelados</a>
+  </div>
+
+  <main>
+    <!-- HERO — split layout (referência Starbucks) + troca de produto (referência vídeo desktop) -->
+    <section class="hero" id="inicio">
+      <div class="hero__card">
+        <div class="hero__left">
+          <a href="#inicio" class="hero__logo"><img src="assets/brand/logo.png" alt="Angy Gelados"></a>
+          <nav class="hero__nav" aria-label="Secções">
+            <a href="#inicio" class="is-active">Início</a>
+            <a href="#menu">Menu</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#visita">Visita</a>
+          </nav>
+          <div class="hero__thumbs" id="heroThumbs" role="tablist" aria-label="Destaques"></div>
+        </div>
+
+        <div class="hero__right" id="heroRight">
+          <div class="hero__right-drip" data-drip="cream"></div>
+          <div class="hero__copy">
+            <p class="hero__eyebrow">Cada colherada, um momento doce</p>
+            <h1 class="hero__title" id="heroTitle">Gelados, waffles<br>&amp; panquecas</h1>
+            <p class="hero__price" id="heroPrice"></p>
+            <p class="hero__desc" id="heroDesc"></p>
+            <a href="#menu" class="btn btn--ghost">Ver o menu</a>
+          </div>
+        </div>
+
+        <div class="hero__stage" id="heroStage">
+          <div class="hero__blob" id="heroBlob"></div>
+          <img class="hero__product" id="heroProduct" src="" alt="">
+          <div class="hero__floaters" id="heroFloaters"></div>
+        </div>
+
+        <div class="hero__word" aria-hidden="true">
+          <span class="hero__word-dark">ANGY</span>
+          <span class="hero__word-light">ANGY</span>
+        </div>
+
+        <a class="hero__scroll" href="#menu" aria-label="Descer"><span></span></a>
+      </div>
+    </section>
+
+    <!-- Faixa marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Gelados artesanais</span><i>✦</i><span>Waffles</span><i>✦</i><span>Panquecas</span><i>✦</i><span>Donuts</span><i>✦</i><span>Churros</span><i>✦</i><span>Batidos</span><i>✦</i>
+        <span>Gelados artesanais</span><i>✦</i><span>Waffles</span><i>✦</i><span>Panquecas</span><i>✦</i><span>Donuts</span><i>✦</i><span>Churros</span><i>✦</i><span>Batidos</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- MENU -->
+    <section class="menu" id="menu">
+      <div class="drip-edge" data-drip="choco-sprinkles"></div>
+
+      <!-- Desktop: galeria horizontal guiada pelo scroll -->
+      <div class="rail" id="rail">
+        <div class="rail__sticky">
+          <div class="menu__head">
+            <p class="kicker">O nosso menu</p>
+            <h2 class="section-title">Escolhe o teu <em>doce</em></h2>
+            <div class="tabs" id="menuTabs" role="tablist"></div>
+          </div>
+          <div class="rail__track" id="railTrack"></div>
+          <div class="rail__progress"><span id="railProgress"></span></div>
+        </div>
+      </div>
+
+      <!-- Mobile: carrossel de cartões (referência vídeo Android) -->
+      <div class="swipe" id="swipe">
+        <div class="swipe__bg" id="swipeBg"></div>
+        <div class="swipe__viewport" id="swipeViewport">
+          <div class="swipe__track" id="swipeTrack"></div>
+        </div>
+        <div class="swipe__dots" id="swipeDots"></div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="services" id="servicos">
+      <div class="drip-edge" data-drip="cream"></div>
+      <div class="services__inner">
+        <p class="kicker kicker--light">O que fazemos</p>
+        <h2 class="section-title section-title--light">Doçura para <em>todos</em> os momentos</h2>
+        <div class="services__grid" id="servicesGrid"></div>
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="gallery" id="galeria">
+      <div class="drip-edge" data-drip="pink-sprinkles"></div>
+      <p class="kicker">Segue-nos em @angy_gelados</p>
+      <h2 class="section-title">Momentos <em>doces</em></h2>
+      <div class="gallery__grid" id="galleryGrid"></div>
+    </section>
+
+    <!-- VISITA -->
+    <section class="visit" id="visita">
+      <div class="drip-edge" data-drip="cream"></div>
+      <div class="visit__inner">
+        <div class="visit__text">
+          <p class="kicker kicker--light">Vem visitar-nos</p>
+          <h2 class="section-title section-title--light">Anda cá matar a <em>vontade</em></h2>
+          <ul class="visit__list" id="visitList"></ul>
+          <div class="visit__cta">
+            <a class="btn btn--solid" href="https://www.instagram.com/angy_gelados/" target="_blank" rel="noopener">Seguir no Instagram</a>
+          </div>
+        </div>
+        <div class="visit__art">
+          <img src="" alt="" id="visitImg">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="assets/brand/logo.png" alt="Angy Gelados" class="footer__logo">
+    <p>© <span id="year"></span> Angy Gelados · Feito com açúcar e carinho.</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/drips.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
