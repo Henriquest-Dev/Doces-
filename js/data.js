@@ -1,6 +1,6 @@
 /* ==========================================================
    Conteúdo do site — edita aqui para atualizar o menu.
-   ⚠️ Nomes, preços e fotos são PROVISÓRIOS: o Instagram
+   ATENÇÃO: nomes, preços e fotos são PROVISÓRIOS: o Instagram
    bloqueou o acesso automático aos destaques do @angy_gelados.
    Para usar as fotos reais: coloca o PNG/WebP (fundo
    transparente) em assets/menu/ e troca o campo `img`.
@@ -63,10 +63,10 @@ window.ANGY = {
   ],
 
   services: [
-    { icon: '🍨', title: 'Gelados artesanais', text: 'Sabores cremosos servidos em copo, cone ou taça, com toppings à escolha.' },
-    { icon: '🧇', title: 'Waffles & panquecas', text: 'Feitos na hora, quentinhos, com chocolate, fruta e gelado.' },
-    { icon: '🎂', title: 'Encomendas & festas', text: 'Doces para aniversários e eventos. Fala connosco por mensagem.' },
-    { icon: '🛵', title: 'Take-away', text: 'Pede e leva contigo, ou combina a entrega por mensagem.' },
+    { icon: 'icecream', title: 'Gelados artesanais', text: 'Sabores cremosos servidos em copo, cone ou taça, com toppings à escolha.' },
+    { icon: 'waffle', title: 'Waffles & panquecas', text: 'Feitos na hora, quentinhos, com chocolate, fruta e gelado.' },
+    { icon: 'cake', title: 'Encomendas & festas', text: 'Doces para aniversários e eventos. Fala connosco por mensagem.' },
+    { icon: 'bag', title: 'Take-away', text: 'Pede e leva contigo, ou combina a entrega por mensagem.' },
   ],
 
   gallery: [
@@ -74,11 +74,11 @@ window.ANGY = {
     'assets/gallery/g6.webp', 'assets/gallery/g7.webp', 'assets/gallery/g8.webp',
   ],
 
-  // ⚠️ Morada e horário por confirmar: preenche com os dados reais.
+  // ATENÇÃO: morada e horário por confirmar: preenche com os dados reais.
   visit: [
-    { icon: '📍', label: 'Onde estamos', value: 'Morada a confirmar' },
-    { icon: '🕒', label: 'Horário', value: 'Horário a confirmar' },
-    { icon: '💬', label: 'Encomendas', value: 'Por mensagem no Instagram @angy_gelados' },
+    { icon: 'pin', label: 'Onde estamos', value: 'Morada a confirmar' },
+    { icon: 'clock', label: 'Horário', value: 'Horário a confirmar' },
+    { icon: 'chat', label: 'Encomendas', value: 'Por mensagem no Instagram @angy_gelados' },
   ],
   visitImg: 'assets/menu/taca-frutos-vermelhos.webp',
 };

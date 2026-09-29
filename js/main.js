@@ -220,7 +220,7 @@
     swipeDots.addEventListener('click', (e) => { const i = [...swipeDots.children].indexOf(e.target); if (i >= 0) goSwipe(i); });
   })();
 
-  // Botões de pedido → DM do Instagram
+  // Botões de pedido abrem a DM do Instagram
   document.addEventListener('click', (e) => {
     const b = e.target.closest('[data-order]');
     if (!b) return;
@@ -233,11 +233,11 @@
 
   /* ---------------- Serviços, galeria, visita ---------------- */
   $('#servicesGrid').innerHTML = services.map((s) => `
-    <article class="scard reveal"><div class="scard__icon">${s.icon}</div><h3>${s.title}</h3><p>${s.text}</p></article>`).join('');
+    <article class="scard reveal"><div class="scard__icon">${ICONS[s.icon]}</div><h3>${s.title}</h3><p>${s.text}</p></article>`).join('');
   $('#galleryGrid').innerHTML = gallery.map((g) => `
-    <a class="reveal" href="https://www.instagram.com/angy_gelados/" target="_blank" rel="noopener"><img src="${g}" alt="Angy Gelados" loading="lazy"></a>`).join('');
+    <a class="reveal" href="https://www.instagram.com/angy_gelados/" target="_blank" rel="noopener"><img src="${g}" alt="Angy Gelados" loading="lazy"><span class="gallery__heart">${ICONS.heart}</span></a>`).join('');
   $('#visitList').innerHTML = visit.map((v) => `
-    <li><span class="ico">${v.icon}</span><span><b>${v.label}</b>${v.value}</span></li>`).join('');
+    <li><span class="ico">${ICONS[v.icon]}</span><span><b>${v.label}</b>${v.value}</span></li>`).join('');
   const vimg = $('#visitImg');
   vimg.src = window.ANGY.visitImg; vimg.alt = 'Angy Gelados';
 

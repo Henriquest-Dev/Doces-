@@ -184,7 +184,7 @@ button { font: inherit; cursor: pointer; }
 /* ---------- Marquee ---------- */
 .marquee { background: var(--choco); color: var(--cream); overflow: hidden; padding: 18px 0; position: relative; z-index: 3; }
 .marquee__track { display: flex; gap: 32px; width: max-content; animation: marquee 22s linear infinite; font-family: var(--font-display); font-size: clamp(1.6rem, 3.4vw, 2.8rem); text-transform: uppercase; align-items: center; }
-.marquee__track i { color: var(--brand); font-style: normal; font-size: .7em; }
+.marquee__track .spark { width: .55em; height: .55em; background: var(--brand); clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%); flex: 0 0 auto; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
 /* ---------- Secções genéricas ---------- */
@@ -255,7 +255,8 @@ button { font: inherit; cursor: pointer; }
 .services__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 50px; }
 .scard { background: rgba(255,255,255,.14); border: 1.5px solid rgba(255,255,255,.35); border-radius: var(--radius); padding: 28px 24px; color: var(--white); backdrop-filter: blur(4px); transition: transform .5s var(--ease), background .4s; }
 .scard:hover { transform: translateY(-8px); background: rgba(255,255,255,.22); }
-.scard__icon { width: 64px; height: 64px; border-radius: 20px; background: var(--white); display: grid; place-items: center; font-size: 2rem; margin-bottom: 18px; box-shadow: 0 10px 20px rgba(0,0,0,.12); }
+.scard__icon { width: 64px; height: 64px; border-radius: 20px; background: var(--white); display: grid; place-items: center; color: var(--brand); margin-bottom: 18px; box-shadow: 0 10px 20px rgba(0,0,0,.12); }
+.scard__icon svg { width: 32px; height: 32px; }
 .scard h3 { font-family: var(--font-round); font-size: 1.3rem; margin: 0 0 8px; }
 .scard p { margin: 0; font-size: .88rem; line-height: 1.6; opacity: .92; }
 
@@ -269,8 +270,10 @@ button { font: inherit; cursor: pointer; }
 .gallery__grid a:nth-child(1) { grid-row: span 2; }
 .gallery__grid img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
 .gallery__grid a:hover img { transform: scale(1.08); }
-.gallery__grid a::after { content: '♥'; position: absolute; inset: 0; display: grid; place-items: center; color: #fff; font-size: 2.4rem; background: rgba(232,72,138,.45); opacity: 0; transition: opacity .4s; }
-.gallery__grid a:hover::after { opacity: 1; }
+.gallery__heart { position: absolute; inset: 0; display: grid; place-items: center; color: #fff; background: rgba(232,72,138,.45); opacity: 0; transition: opacity .4s; }
+.gallery__heart svg { width: 44px; height: 44px; fill: #fff; transform: scale(.6); transition: transform .5s var(--ease); }
+.gallery__grid a:hover .gallery__heart { opacity: 1; }
+.gallery__grid a:hover .gallery__heart svg { transform: scale(1); }
 
 /* ==========================================================
    VISITA
@@ -281,7 +284,8 @@ button { font: inherit; cursor: pointer; }
 .visit__list { list-style: none; padding: 0; margin: 34px 0; display: grid; gap: 18px; }
 .visit__list li { display: flex; gap: 16px; align-items: flex-start; font-size: 1rem; line-height: 1.5; }
 .visit__list b { display: block; font-family: var(--font-round); color: var(--brand); font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; }
-.visit__list .ico { flex: 0 0 48px; height: 48px; border-radius: 16px; background: rgba(255,255,255,.08); display: grid; place-items: center; font-size: 1.3rem; }
+.visit__list .ico { flex: 0 0 48px; height: 48px; border-radius: 16px; background: rgba(255,255,255,.08); display: grid; place-items: center; color: var(--brand); }
+.visit__list .ico svg { width: 24px; height: 24px; }
 .visit__art { position: relative; aspect-ratio: 1; width: 100%; max-width: 520px; justify-self: center; }
 .visit__art::before { content: ''; position: absolute; inset: 6%; border-radius: 50%; background: var(--brand); animation: breathe 6s ease-in-out infinite; }
 .visit__art img { position: absolute; inset: 4%; width: 92%; height: 92%; object-fit: contain; filter: drop-shadow(0 30px 30px rgba(0,0,0,.4)); animation: floaty 5s ease-in-out infinite; }
